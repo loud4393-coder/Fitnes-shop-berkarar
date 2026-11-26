@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#09090d">
+  <meta name="description" content="Fitness Shop — спортивная одежда, обувь и аксессуары.">
+  <title>FITNESS SHOP — Move with intent</title>
+  <link rel="preload" href="/static/style.css" as="style">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="announcement"><span class="pulse"></span> MOVE BETTER. FEEL STRONGER. <span class="announcement-right">FITNESS SHOP · ASHGABAT</span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Fitness Shop — главная">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 31c5-2 8-8 10-14 1-3 3-5 5-5 3 0 4 3 5 7 1 4 3 7 7 7 3 0 5-2 7-5-1 9-7 15-14 15-6 0-9-4-11-10-2 3-4 5-9 5Z"/><circle cx="31" cy="8" r="5"/></svg></span>
+      <span class="brand-type">FITNESS<span>SHOP</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#catalog">Каталог</a><a href="#catalog" data-filter-link="Кроссовки">Обувь</a><a href="#catalog" data-filter-link="Футболки">Одежда</a><a href="#catalog" data-filter-link="Сумки">Сумки</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button search-toggle" id="searchToggle" aria-label="Поиск"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+      <button class="cart-button" id="openCart" aria-label="Открыть корзину"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L22 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="19" cy="21" r="1"/></svg><span>Корзина</span><b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> TRAINING / EVERYDAY / PERFORMANCE</p>
+        <h1>BUILT TO<br><em>MOVE.</em></h1>
+        <p class="hero-description">Экипировка для тех, кто не стоит на месте. Собери свой ритм — от первой разминки до нового личного рекорда.</p>
+        <a class="primary-cta" href="#catalog">Смотреть коллекцию <span>↗</span></a>
+        <div class="hero-meta"><span>01 / 04</span><span class="meta-line"></span><span>THE NEW TRAINING EDIT</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Спортивная экипировка">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-stamp">MOVE<br>WITH<br>INTENT<span>®</span></div>
+        <div class="hero-product hero-shoe"><img alt="Чёрно-белые спортивные кроссовки"></div>
+        <div class="hero-product hero-shirt"><img alt="Чёрная тренировочная футболка"></div>
+        <div class="hero-side-note">PERFORMANCE<br>IS A MINDSET</div>
+      </div>
+      <div class="hero-bottom"><span>01 — 08</span><span>CURATED FOR MOVEMENT</span><span>SCROLL TO EXPLORE ↓</span></div>
+    </section>
+
+    <section class="trust-strip" aria-label="Преимущества"><div><b>01</b><span>Тренировочная<br>экипировка</span></div><div><b>02</b><span>Городской<br>стиль</span></div><div><b>03</b><span>Детали имеют<br>значение</span></div><div class="strip-mark">FS<span>®</span></div></section>
+
+    <section class="catalog-section" id="catalog">
+      <div class="section-heading"><div><p class="eyebrow">THE SELECTION / 2026</p><h2>Выбирай свой <em>темп.</em></h2></div><p class="section-note">Функциональные вещи.<br>Чистый дизайн. Никакого лишнего.</p></div>
+      <div class="catalog-toolbar">
+        <div class="category-tabs" id="categoryTabs"><button class="active" data-category="Все">Все товары <span>08</span></button><button data-category="Кроссовки">Обувь</button><button data-category="Футболки">Футболки</button><button data-category="Сумки">Сумки</button><button data-category="Шорты">Шорты</button><button data-category="Штаны">Штаны</button><button data-category="Аксессуары">Аксессуары</button></div>
+        <label class="search-field" id="searchField"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input id="productSearch" type="search" placeholder="Найти товар..." autocomplete="off"></label>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="catalog-foot"><span>SHOWING <b id="showingCount">08</b> PRODUCTS</span><span>MADE FOR YOUR NEXT MOVE <b>↗</b></span></div>
+    </section>
+
+    <section class="manifesto"><div class="manifesto-art"><span class="manifesto-ring"></span><span class="manifesto-word">NO<br>OFF<br>DAYS.</span><span class="manifesto-index">FS / 001</span></div><div class="manifesto-copy"><p class="eyebrow">A LITTLE MORE THAN SPORTSWEAR</p><h2>Не жди<br>идеального<br><em>момента.</em></h2><p>Он начинается с движения. Подбери экипировку, которая не отвлекает от цели — и просто сделай следующий шаг.</p><a href="#catalog" class="text-link">Найти свою экипировку <span>↗</span></a></div></section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M8 31c5-2 8-8 10-14 1-3 3-5 5-5 3 0 4 3 5 7 1 4 3 7 7 7 3 0 5-2 7-5-1 9-7 15-14 15-6 0-9-4-11-10-2 3-4 5-9 5Z"/><circle cx="31" cy="8" r="5"/></svg></span><span class="brand-type">FITNESS<span>SHOP</span></span></a><span>DEMO STORE · 2026</span><span>MOVE WITH INTENT.</span></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Корзина" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Корзина <span id="drawerCount">(0)</span></h2></div><button class="close-button" id="closeCart" aria-label="Закрыть">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom"><div class="subtotal"><span>Итого</span><b id="cartTotal">0 TMT</b></div><button class="primary-cta checkout-start" id="checkoutStart">Перейти к оформлению <span>↗</span></button><p>Демо-заказ · Без оплаты</p></div>
+  </aside>
+
+  <section class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="checkout-head"><div><p class="eyebrow">ALMOST THERE / DEMO CHECKOUT</p><h2 id="checkoutTitle">Оформление <em>заказа.</em></h2></div><button class="close-button" id="closeCheckout" aria-label="Закрыть">×</button></div>
+    <form id="checkoutForm" novalidate>
+      <div class="form-grid"><label>Имя и фамилия<input name="name" autocomplete="name" maxlength="80" placeholder="Как к вам обращаться" required></label><label>Номер телефона<input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+993 ..." required></label><label>Город<input name="city" autocomplete="address-level2" maxlength="80" placeholder="Ашхабад" required></label><label>Получение<select name="method" id="deliveryMethod"><option value="delivery">Доставка</option><option value="pickup">Самовывоз</option></select></label><label class="address-field full-width">Адрес доставки<input name="address" autocomplete="street-address" maxlength="180" placeholder="Улица, дом, ориентир"></label><label class="full-width">Комментарий <span class="optional">необязательно</span><textarea name="comment" rows="2" maxlength="300" placeholder="Размер, цвет или пожелания"></textarea></label></div>
+      <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" name="consent" required><span>Я согласен(на), что введённые данные будут отправлены оператору демо-магазина в Telegram для демонстрации оформления заказа.</span></label>
+      <div class="checkout-summary"><span>Сумма демонстрационного заказа</span><b id="checkoutTotal">0 TMT</b></div>
+      <button class="primary-cta submit-order" type="submit" id="submitOrder">Отправить демо-заказ <span>↗</span></button>
+      <p class="form-disclaimer">Это демонстрация. Оплата не производится, заказ не передаётся в реальный магазин. Используйте тестовые контактные данные.</p>
+      <div class="form-message" id="formMessage" role="status"></div>
+    </form>
+  </section>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
