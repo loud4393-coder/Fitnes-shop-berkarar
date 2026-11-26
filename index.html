@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f6f3">
+  <meta name="description" content="Fitness Shop — спортивная одежда, обувь и аксессуары.">
+  <title>Fitness Shop — Каталог</title>
+  <link rel="preload" href="/static/style.css" as="style">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header" id="home">
+    <button class="icon-button menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <a class="brand" href="#home" aria-label="Fitness Shop — главная">
+      <span class="brand-mark" aria-hidden="true">F<span>S</span></span>
+      <span class="brand-type">FITNESS <b>SHOP</b></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#catalog">Каталог</a>
+      <a href="#catalog" data-filter-link="Кроссовки">Обувь</a>
+      <a href="#catalog" data-filter-link="Футболки">Одежда</a>
+      <a href="#catalog" data-filter-link="Сумки">Сумки</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button search-toggle" id="searchToggle" aria-label="Поиск">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+      </button>
+      <button class="cart-button" id="openCart" aria-label="Открыть корзину">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L22 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="19" cy="21" r="1"/></svg>
+        <span>Корзина</span><b id="cartCount">0</b>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="catalog-section" id="catalog">
+      <div class="catalog-topline">
+        <div>
+          <p class="eyebrow">FITNESS SHOP <span> / </span> АШХАБАД</p>
+          <h1>Каталог</h1>
+          <p class="catalog-intro">Спортивная одежда, обувь и аксессуары.</p>
+        </div>
+        <span class="catalog-total">08 <small>ТОВАРОВ</small></span>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div class="category-tabs" id="categoryTabs" aria-label="Категории товаров">
+          <button class="active" data-category="Все">Все товары</button>
+          <button data-category="Кроссовки">Обувь</button>
+          <button data-category="Футболки">Футболки</button>
+          <button data-category="Сумки">Сумки</button>
+          <button data-category="Шорты">Шорты</button>
+          <button data-category="Штаны">Штаны</button>
+          <button data-category="Аксессуары">Аксессуары</button>
+        </div>
+        <label class="search-field" id="searchField">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+          <input id="productSearch" type="search" placeholder="Поиск товаров" autocomplete="off" aria-label="Поиск товаров">
+        </label>
+      </div>
+
+      <div class="catalog-meta">
+        <span>ВСЕ ТОВАРЫ</span>
+        <span><b id="showingCount">08</b> ПОЗИЦИЙ</span>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="catalog-foot"><span>FITNESS SHOP</span><span>КАТАЛОГ <b>·</b> 2026</span></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer-brand" href="#home">FITNESS SHOP</a>
+    <span>ДЕМО-МАГАЗИН</span>
+    <a href="#catalog">Вернуться к каталогу ↑</a>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Нижняя навигация">
+    <a class="bottom-link active" href="#home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+      <span>Главная</span>
+    </a>
+    <a class="bottom-link" href="#catalog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+      <span>Каталог</span>
+    </a>
+    <button class="bottom-link" type="button" id="bottomSearch">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+      <span>Поиск</span>
+    </button>
+    <button class="bottom-link bottom-cart" type="button" id="bottomCart">
+      <span class="bottom-cart-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L22 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="19" cy="21" r="1"/></svg><i id="bottomCartCount">0</i></span>
+      <span>Корзина</span>
+    </button>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="menu-drawer" id="menuDrawer" aria-label="Меню магазина" aria-hidden="true">
+    <div class="menu-head">
+      <a class="brand" href="#home"><span class="brand-mark">F<span>S</span></span><span class="brand-type">FITNESS <b>SHOP</b></span></a>
+      <button class="close-button" id="menuClose" aria-label="Закрыть меню">×</button>
+    </div>
+    <p class="menu-caption">НАВИГАЦИЯ</p>
+    <nav class="menu-links">
+      <a href="#catalog">Все товары <span>↗</span></a>
+      <a href="#catalog" data-filter-link="Кроссовки">Обувь <span>↗</span></a>
+      <a href="#catalog" data-filter-link="Футболки">Футболки <span>↗</span></a>
+      <a href="#catalog" data-filter-link="Сумки">Сумки <span>↗</span></a>
+      <a href="#catalog" data-filter-link="Шорты">Шорты <span>↗</span></a>
+      <a href="#catalog" data-filter-link="Штаны">Штаны <span>↗</span></a>
+      <a href="#catalog" data-filter-link="Аксессуары">Аксессуары <span>↗</span></a>
+    </nav>
+    <div class="menu-bottom">
+      <span>FITNESS SHOP</span>
+      <small>Демонстрационная версия магазина</small>
+    </div>
+  </aside>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Корзина" aria-hidden="true">
+    <div class="drawer-head">
+      <div><p class="eyebrow">ВАШ ЗАКАЗ</p><h2>Корзина <span id="drawerCount">(0)</span></h2></div>
+      <button class="close-button" id="closeCart" aria-label="Закрыть">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom">
+      <div class="subtotal"><span>Итого</span><b id="cartTotal">0 TMT</b></div>
+      <button class="primary-cta checkout-start" id="checkoutStart">Перейти к оформлению <span>→</span></button>
+      <p>Демо-заказ · Без оплаты</p>
+    </div>
+  </aside>
+
+  <section class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="checkout-head">
+      <div><p class="eyebrow">ДЕМО-ОФОРМЛЕНИЕ</p><h2 id="checkoutTitle">Оформление заказа</h2></div>
+      <button class="close-button" id="closeCheckout" aria-label="Закрыть">×</button>
+    </div>
+    <form id="checkoutForm" novalidate>
+      <div class="form-grid">
+        <label>Имя и фамилия<input name="name" autocomplete="name" maxlength="80" placeholder="Как к вам обращаться" required></label>
+        <label>Номер телефона<input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+993 ..." required></label>
+        <label>Город<input name="city" autocomplete="address-level2" maxlength="80" placeholder="Ашхабад" required></label>
+        <label>Получение<select name="method" id="deliveryMethod"><option value="delivery">Доставка</option><option value="pickup">Самовывоз</option></select></label>
+        <label class="address-field full-width">Адрес доставки<input name="address" autocomplete="street-address" maxlength="180" placeholder="Улица, дом, ориентир"></label>
+        <label class="full-width">Комментарий <span class="optional">необязательно</span><textarea name="comment" rows="2" maxlength="300" placeholder="Размер, цвет или пожелания"></textarea></label>
+      </div>
+      <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" name="consent" required><span>Я согласен(на), что введённые данные будут отправлены оператору демо-магазина в Telegram для демонстрации оформления заказа.</span></label>
+      <div class="checkout-summary"><span>Сумма демонстрационного заказа</span><b id="checkoutTotal">0 TMT</b></div>
+      <button class="primary-cta submit-order" type="submit" id="submitOrder">Отправить демо-заказ <span>→</span></button>
+      <p class="form-disclaimer">Это демонстрация. Оплата не производится, заказ не передаётся в реальный магазин. Используйте тестовые контактные данные.</p>
+      <div class="form-message" id="formMessage" role="status"></div>
+    </form>
+  </section>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    (() => {
+      const menu = document.getElementById('menuDrawer');
+      const overlay = document.getElementById('overlay');
+      const toggle = document.getElementById('menuToggle');
+      const close = document.getElementById('menuClose');
+      const openMenu = () => {
+        menu.classList.add('open');
+        menu.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        overlay.classList.add('visible');
+        document.body.classList.add('locked');
+      };
+      const closeMenu = () => {
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (!document.getElementById('cartDrawer').classList.contains('open') &&
+            !document.getElementById('checkoutModal').classList.contains('open')) {
+          overlay.classList.remove('visible');
+          document.body.classList.remove('locked');
+        }
+      };
+      toggle.addEventListener('click', openMenu);
+      close.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.getElementById('bottomSearch').addEventListener('click', () => {
+        document.getElementById('searchToggle').click();
+      });
+      document.getElementById('bottomCart').addEventListener('click', () => {
+        document.getElementById('openCart').click();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
+      });
+      const count = document.getElementById('cartCount');
+      const bottomCount = document.getElementById('bottomCartCount');
+      const observer = new MutationObserver(() => bottomCount.textContent = count.textContent);
+      observer.observe(count, {childList:true, characterData:true, subtree:true});
+      bottomCount.textContent = count.textContent;
+    })();
+  </script>
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
