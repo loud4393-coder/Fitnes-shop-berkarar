@@ -158,6 +158,41 @@
     </form>
   </section>
 
+
+  <section class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="detailName" aria-hidden="true">
+    <button class="product-modal-backdrop" type="button" data-close-product aria-label="Закрыть карточку товара"></button>
+    <div class="product-detail-panel">
+      <div class="detail-topbar">
+        <span class="eyebrow">ИНФОРМАЦИЯ О ТОВАРЕ</span>
+        <button class="close-button" type="button" data-close-product aria-label="Закрыть">×</button>
+      </div>
+      <div class="detail-layout">
+        <div class="detail-image-wrap"><img id="detailImage" src="" alt=""></div>
+        <div class="detail-content">
+          <p class="detail-category" id="detailCategory"></p>
+          <h2 id="detailName"></h2>
+          <p class="detail-price" id="detailPrice"></p>
+          <p class="detail-description" id="detailDescription"></p>
+          <div class="detail-option">
+            <div class="option-heading"><label for="detailSize">Размер</label><span id="sizeHint">Выберите размер</span></div>
+            <div class="size-options" id="detailSizes"></div>
+          </div>
+          <div class="detail-option">
+            <div class="option-heading"><label>Цвет</label><span id="detailColorLabel"></span></div>
+            <div class="color-options" id="detailColors"></div>
+          </div>
+          <div class="detail-actions">
+            <label class="detail-quantity">Количество
+              <select id="detailQuantity"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+            </label>
+            <button class="primary-cta detail-add" type="button" id="detailAdd">Добавить в корзину <span>→</span></button>
+          </div>
+          <p class="detail-note">Демо-каталог. Размеры и наличие необходимо подтвердить у магазина.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="toast" id="toast" role="status"></div>
 
   <script>
@@ -204,5 +239,6 @@
     })();
   </script>
   <script src="/static/script.js" defer></script>
+  <script src="/static/product-details.js" defer></script>
 </body>
 </html>
